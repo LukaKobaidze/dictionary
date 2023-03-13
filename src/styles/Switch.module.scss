@@ -1,0 +1,29 @@
+.switch {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 100vw;
+  border: none;
+  background-color: var(--clr-switch);
+  transition: background-color 150ms;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    background-color: #ffffff;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transition: transform 150ms;
+  }
+
+  &--on {
+    &::before {
+      transform: translateX(20px);
+    }
+  }
+}

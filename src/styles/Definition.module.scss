@@ -1,0 +1,287 @@
+a {
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin audioPlaying {
+  .button-play__icon {
+    & circle {
+      opacity: 1;
+      fill: var(--clr-primary);
+    }
+
+    & g {
+      fill: #ffffff;
+    }
+  }
+}
+
+.button-play {
+  cursor: pointer;
+  display: block;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  overflow: hidden;
+
+  @media (max-width: 575px) {
+    width: 65px;
+    height: 65px;
+  }
+
+  @media (max-width: 475px) {
+    width: 55px;
+    height: 55px;
+  }
+
+  @media (max-width: 375px) {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:focus-visible,
+  &--playing {
+    @include audioPlaying();
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @include audioPlaying();
+    }
+  }
+}
+
+.phonetic-text {
+  color: var(--clr-primary);
+  margin-top: 8px;
+}
+
+.meaning {
+  margin-top: 40px;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+  }
+
+  &__partOfSpeech {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 40px;
+
+    @media (max-width: 575px) {
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 575px) {
+      font-size: 21px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      margin-left: 20px;
+      background-color: var(--clr-line);
+
+      @media (max-width: 575px) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &-heading {
+    color: var(--clr-gray);
+
+    @media (max-width: 375px) {
+      font-size: 16px !important;
+    }
+  }
+
+  &__definition {
+    position: relative;
+
+    &-text,
+    &-example {
+      @media (max-width: 475px) {
+        font-size: 15px !important;
+      }
+    }
+
+    &-example {
+      color: var(--clr-gray);
+      margin-top: 13px;
+
+      @media (max-width: 475px) {
+        margin-top: 5px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -20px;
+      transform: translateX(-100%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--clr-primary);
+    }
+  }
+}
+
+.definitions-list {
+  padding-left: 47px;
+  list-style: none;
+  margin-top: 25px;
+
+  @media (max-width: 575px) {
+    margin-top: 17px;
+    padding-left: 26px;
+  }
+}
+
+.onyms {
+  display: flex;
+
+  &-wrapper {
+    margin-top: 40px;
+
+    @media (max-width: 575px) {
+      margin-top: 24px;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &__heading {
+    color: var(--clr-gray);
+
+    @media (max-width: 475px) {
+      font-size: 16px !important;
+      line-height: initial;
+    }
+  }
+
+  &__words {
+    margin-left: 22px;
+    color: var(--clr-primary);
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 475px) {
+      font-size: 16px;
+    }
+
+    & > a {
+      text-decoration: none;
+
+      margin-right: 7px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.sources {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 21px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @media (max-width: 575px) {
+    padding-top: 24px;
+    margin-top: 32px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--clr-line);
+  }
+
+  &__text {
+    color: var(--clr-gray);
+    margin-right: 20px;
+    padding-bottom: 8px;
+    text-decoration: underline;
+  }
+
+  &__anchors {
+    & > a {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__icon-new-window {
+    margin-left: 9px;
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.not-found {
+  text-align: center;
+  padding-top: 104px;
+
+  @media (max-width: 575px) {
+    padding-top: 60px;
+  }
+
+  &__emoji {
+    font-size: 53px;
+  }
+
+  &__heading {
+    font-size: 20px;
+    margin-top: 44px;
+  }
+
+  &__paragraph {
+    margin-top: 24px;
+    color: var(--clr-gray);
+  }
+}
