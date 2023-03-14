@@ -6,12 +6,13 @@ import styles from 'styles/Search.module.scss';
 interface Props {
   word: string;
   onSubmit: (value: string) => void;
+  autoFocus?: boolean;
   className?: string;
 }
 type Ref = HTMLFormElement;
 
 export default forwardRef<Ref, Props>(function Search(props, ref) {
-  const { word, onSubmit, className } = props;
+  const { word, onSubmit, autoFocus, className } = props;
 
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
@@ -29,7 +30,6 @@ export default forwardRef<Ref, Props>(function Search(props, ref) {
 
   useEffect(() => {
     setValue(word);
-    inputRef.current?.focus();
 
     if (word.trim() === '') {
       setError(true);
@@ -48,6 +48,7 @@ export default forwardRef<Ref, Props>(function Search(props, ref) {
         value={value}
         onChange={handleInputChange}
         placeholder="Search for any word..."
+        autoFocus={autoFocus}
       />
       <button
         tabIndex={-1}

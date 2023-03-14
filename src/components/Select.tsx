@@ -24,7 +24,11 @@ export default function Select(props: Props) {
         className={styles.button}
         onClick={() => setExtended((state) => !state)}
       >
-        <Text size="M" tag="span" className={styles['text-main']}>
+        <Text
+          size="M"
+          tag="span"
+          className={`${styles['text-main']} ${selected.className}`}
+        >
           {selected.name}
         </Text>
         <IconArrowDown className={styles['button__icon']} />

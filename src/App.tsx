@@ -133,7 +133,7 @@ export default function App() {
             shouldHandle={popupSearch}
             ignore={[headerSearchBtnRef]}
           >
-            <Search word={word} onSubmit={handleSearchSubmit} />
+            <Search word={word} onSubmit={handleSearchSubmit} autoFocus />
           </AlertOutsideClick>
         )}
 
