@@ -128,10 +128,6 @@ a {
     &-example {
       color: var(--clr-gray);
       margin-top: 13px;
-
-      @media (max-width: 475px) {
-        margin-top: 5px;
-      }
     }
 
     &:not(:last-child) {
