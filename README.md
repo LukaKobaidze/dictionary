@@ -48,6 +48,10 @@ Users should be able to:
 - TypeScript
 - Sass
 
+### What I learned
+
+I learned about `prefers-color-scheme`, which I used to determine users theme preference
+
 ## Author
 
 - Frontend Mentor - [@LukaKobaidze](https://www.frontendmentor.io/profile/LukaKobaidze)
