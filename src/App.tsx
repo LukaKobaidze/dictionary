@@ -70,7 +70,7 @@ export default function App() {
   useEffect(() => {
     document.body.classList.add(font.className);
 
-    if (previousFont && font !== previousFont) {
+    if (previousFont && font.name !== previousFont.name) {
       document.body.classList.remove(previousFont.className);
     }
 
