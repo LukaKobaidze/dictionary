@@ -154,6 +154,7 @@ export default function Definition(props: Props) {
                   isAudioPlaying ? styles['button-play--playing'] : ''
                 }`}
                 onClick={playAudio}
+                aria-label="play audio"
               >
                 <IconPlay className={styles['button-play__icon']} />
               </button>
@@ -205,7 +206,7 @@ export default function Definition(props: Props) {
                             {meaning.synonyms.map((synonym, i) => (
                               <a
                                 key={synonym}
-                                href={`?search=${synonym}`}
+                                href={`?search=${synonym.replace(/ /g, '%20')}`}
                                 onClick={handleWordClick}
                               >
                                 {synonym}
@@ -224,7 +225,7 @@ export default function Definition(props: Props) {
                             {meaning.antonyms.map((antonym, i) => (
                               <a
                                 key={antonym}
-                                href={`?search=${antonym}`}
+                                href={`?search=${antonym.replace(/ /g, '%20')}`}
                                 onClick={handleWordClick}
                               >
                                 {antonym}

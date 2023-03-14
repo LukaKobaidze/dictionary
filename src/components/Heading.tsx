@@ -11,7 +11,9 @@ export default function Heading(props: Props) {
 
   return (
     <HeadingLevel
-      className={`${styles.heading} ${styles[`heading--${level}`]} ${className}`}
+      className={`${styles.heading} ${styles[`heading--${level}`]} ${
+        className || ''
+      }`}
       {...restProps}
     >
       {children}

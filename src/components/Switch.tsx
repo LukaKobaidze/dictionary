@@ -13,7 +13,7 @@ export default function Switch(props: Props) {
     <button
       className={`${styles.switch} ${
         type === 'on' ? styles['switch--on'] : ''
-      } ${className}`}
+      } ${className || ''}`}
       onClick={onToggle}
     />
   );

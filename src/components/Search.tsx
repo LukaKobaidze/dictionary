@@ -39,7 +39,7 @@ export default forwardRef<Ref, Props>(function Search(props, ref) {
   return (
     <form
       ref={ref}
-      className={`${styles.container} ${className}`}
+      className={`${styles.container} ${className || ''}`}
       onSubmit={handleSubmit}
     >
       <input
@@ -57,6 +57,7 @@ export default forwardRef<Ref, Props>(function Search(props, ref) {
         onClick={() =>
           (value.trim().length === 0 || word === value) && inputRef.current?.focus()
         }
+        aria-label="search"
       >
         <IconSearch className={styles.icon} />
       </button>

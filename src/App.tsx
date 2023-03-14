@@ -106,6 +106,7 @@ export default function App() {
           tabIndex={isSearchVisible ? -1 : undefined}
           onClick={() => setPopupSearch(true)}
           ref={headerSearchBtnRef}
+          aria-label="search"
         >
           <IconSearch />
         </button>

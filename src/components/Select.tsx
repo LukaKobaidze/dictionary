@@ -18,7 +18,7 @@ export default function Select(props: Props) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={`${styles.container} ${className || ''}`}>
       <button
         ref={buttonRef}
         className={styles.button}

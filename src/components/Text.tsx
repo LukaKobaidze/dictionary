@@ -13,7 +13,7 @@ export default function Text(props: Props) {
 
   return (
     <Tag
-      className={`${size === 'S' ? styles.small : styles.medium} ${className}`}
+      className={`${size === 'S' ? styles.small : styles.medium} ${className || ''}`}
       {...restProps}
     >
       {children}
