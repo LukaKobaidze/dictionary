@@ -117,7 +117,11 @@ export default function App() {
           onSelect={(font) => setFont(font)}
         />
         <div className={styles['header__line']} />
-        <Switch type={theme === 'light' ? 'off' : 'on'} onToggle={toggleTheme} />
+        <Switch
+          type={theme === 'light' ? 'off' : 'on'}
+          onToggle={toggleTheme}
+          ariaLabel="switch theme"
+        />
         <IconMoon
           className={`${styles['header__moon']} ${
             theme === 'dark' ? styles['header__moon--dark'] : ''
